@@ -1,0 +1,134 @@
+/* Reset do box-sizing */
+*, 
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Reset do tamanho do texto */
+html {
+  font-size: 10px;
+}
+
+/* =================== O body =================== */
+body {
+  background-color: #027368;
+  font-size: 1.8rem;
+  font-family: monospace;
+  position: relative;
+}
+
+/* ============== Area do título ===================== */
+.title h1 {
+  margin-top: 6rem;
+  margin-bottom: 1.5rem;
+  font-family: Consolas, monospace;
+  font-size: 4.5rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.title p {
+  font-size: 1.5rem;
+}
+
+.title h1, 
+.title p {
+  color: #fff;
+  text-align: center;
+}
+
+/* ================== Área da calculadora ========================= */
+.calc-wrapper {
+  width: 27rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  padding: 1.2rem;
+  background-color: #fff;
+  border-radius: .3rem;
+
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: .3rem .3rem 1.5rem rgba(0, 0, 0, .15);
+}
+
+/* imput io */
+.calc-io-wrapper {
+  margin-bottom: 1.8rem;
+}
+.calc-io-wrapper input {
+  width: 100%;
+  font-size: 3rem;
+  text-align: right;
+  font-family: monospace;
+  padding: .9rem;
+  border-radius: .3rem;
+  border: none;
+  background-color: #f1f1f1;
+}
+
+.calc-io-wrapper input:focus {
+  box-shadow: 0rem .1rem .3rem rgba(2, 115, 104, 0.09);
+  outline: none;
+}
+
+/* desativando as cetas do input tipo number :D, visite: https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp */
+/* compatibilidade com Chrome, Safari, Edge, Opera */
+.calc-io-wrapper input::-webkit-outer-spin-button,
+.calc-io-wrapper input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* compatibilidade com Firefox */
+.calc-io-wrapper input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+/* Teclados */
+.keys-wrapper button.btn {
+  font-size: 3rem;
+  color: #4c4c4c;
+  border: none;
+  border-radius: .3rem;
+  padding: .9rem;
+  font-family: monospace;
+  cursor: pointer;
+  
+  transition: all .3s ease-in-out;
+}
+
+.keys-wrapper button.btn:hover {
+  background-color: #027368;
+  box-shadow: .3rem .3rem .9rem rgba(24, 2, 2, 0.15);
+  color: #fff;
+}
+
+.keys-wrapper button.btn:focus {
+  outline: none;
+}
+
+
+.keys-wrapper {
+  display: grid;
+  grid-template-areas: 'nums nums nums symbs'; /* aplicando as áreas por mim criadas */
+  gap: .9rem;
+}
+
+.keys-wrapper > .numbers { 
+  grid-area: nums; /* criando a grid area numbers */
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: .9rem;
+
+}
+
+.keys-wrapper > .symbols { 
+  grid-area: symbs; /* criando a grid area symbols */
+  display: grid;
+  grid-template-columns: auto;
+  gap: .9rem;
+}
